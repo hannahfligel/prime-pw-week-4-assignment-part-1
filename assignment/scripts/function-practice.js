@@ -15,30 +15,48 @@ console.log('Test - should say "Hello World!"', hello());
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
 function helloName( name ) {
-  return;
+  return 'Hello, '+ name;
 }
 // Remember to call the function to test
-
+console.log( helloName('Hannah!'));
 
 // 3. Function to add two numbers together & return the result
-function addNumbers( firstNumber ) {
+function addNumbers( firstNumber, secondNumber ) {
   // return firstNumber + secondNumber;
+  let answer = firstNumber + secondNumber;
+  // return firstNumber + secondNumber;
+  return answer;
 }
-
+console.log ( addNumbers (2, 3));
 
 // 4. Function to multiply three numbers & return the result
-function multiplyThree( ){
-
+function multiplyThree( firstNumber, secondNumber, thirdNumber ){
+  //create a variable called answer and set it equal to firstNumber * secondNumber * thirdNumber 
+  let answer = firstNumber * secondNumber * thirdNumber;
+  //return answer 
+  return answer;
 }
+//console log the numbers you want to multiply 
+console.log ( multiplyThree (2, 3, 1) );
+
+//another answer that includes the console log inside the function, this way you don't have to console log every solution seperatly: 
+function multiplyThree( firstNumber, secondNumber, thirdNumber ){
+  let answer = firstNumber * secondNumber * thirdNumber;
+  console.log( answer )
+  return answer;
+}
+( multiplyThree (2, 3, 1) );
 
 
 // 5. Function that will return true if a number is positive, 
 //    or greater than zero, and false otherwise
 function isPositive( number ) {
   if ( number > 0 ){
-    return;
+    return true;
   }
-    return;
+  else {
+    return false;
+  }
 }
 // Call the function to test each outcome (true & false) 
 // Write a separate console.log statement for each outcome
@@ -46,12 +64,25 @@ console.log( 'isPositive - should say true', isPositive(3) );
 console.log( 'isPositive - should say false', isPositive(0) );
 console.log( 'isPositive - should say false', isPositive(-3) );
 
-
 // 6. Function to return the _last_ item in an array. If the 
 //    array is empty, return `undefined`.
+//create a function called getLast that takes in the value called array
 function getLast( array ) {
-
+  //if the array is empty, then return undefined
+  if(array.length === 0){
+    return console.log(undefined);
+  }
+  //else, (is the array is not empty), console log the last item of the array 
+  else{
+    console.log(array[array.length-1]);  //the length of the array is always going to be one more of the last index 
+  }
 }
+  getLast(["Moon","Floyd", "Hannah", "Stav"]);
+  getLast(["Moon","Floyd", "Hannah", "Stav", "Paran"]);
+  getLast([1, 2, 3, 4]);
+  getLast([]);
+  getLast("moon");//a string is technically an array, which is why when you run this, you'll console will access "n", as it's the last item in the array 
+  getLast(1234);//this will console undefined because numbers are not inherently an array. You cannot loop through a number. You can only loop through numbers if they are in an array. 
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
