@@ -78,18 +78,30 @@ function getLast( array ) {
   }
 }
   getLast(["Moon","Floyd", "Hannah", "Stav"]);
-  getLast(["Moon","Floyd", "Hannah", "Stav", "Paran"]);
-  getLast([1, 2, 3, 4]);
-  getLast([]);
-  getLast("moon");//a string is technically an array, which is why when you run this, you'll console will access "n", as it's the last item in the array 
-  getLast(1234);//this will console undefined because numbers are not inherently an array. You cannot loop through a number. You can only loop through numbers if they are in an array. 
+  // getLast(["Moon","Floyd", "Hannah", "Stav", "Paran"]);
+  // getLast([1, 2, 3, 4]);
+  // getLast([]);
+  // getLast("moon");//a string is technically an array, which is why when you run this, you'll console will access "n", as it's the last item in the array 
+  // getLast(1234);//this will console undefined because numbers are not inherently an array. You cannot loop through a number. You can only loop through numbers if they are in an array. 
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
+//create a function and assign it the value of find with the arguments of value and array 
 function find( value, array ){
-  
-}
+    //create a for loop that loops through the array to check if the value exists in the array. 
+    for(let i=0; i<array.length; i++){
+      //check if the value is equal to the array[i]
+      if(value === array[i]){
+        //return true if the value exists in the array 
+        return console.log (true);
+      }//end if 
+      //return false if the value does not exists in the array 
+      return console.log (false);
+  }//end for
+}//end find
+//fire off the find function and give it the parameters of the value you're searching for in the array that you'll be searching in. 
+find("fshiufsh",["Hannah", "Paran", "Stav", "Moon"]);
 
 // ----------------------
 // Stretch Goals
